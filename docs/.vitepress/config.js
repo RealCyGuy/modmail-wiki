@@ -6,13 +6,13 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     logo: "/logo.jpg",
-    nav: [{ text: "Guide", link: "/guide" }],
+    nav: [{ text: "Guide", link: "/guide/installation" }],
     socialLinks: [
       { icon: "github", link: "https://github.com/kyb3r/modmail" },
       { icon: "discord", link: "https://discord.gg/etJNHCQ" },
     ],
     editLink: {
-      pattern: "https://github.com/realcyguy/modmail-wiki/edit/main/docs/:path",
+      pattern: "https://github.com/realcyguy/modmail-wiki/edit/master/docs/:path",
       text: "Edit this page on GitHub",
     },
     sidebar: [

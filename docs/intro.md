@@ -1,17 +1,20 @@
+---
+sidebar_position: 0
+---
+
 # Installation
-__If you need help beyond this tutorial please join our support server and the support team will be happy to help you__ [https://discord.gg/etJNHCQ](https://discord.gg/etJNHCQ)
+
+**If you need help beyond this tutorial please join our support server and the support team will be happy to help you** [https://discord.gg/etJNHCQ](https://discord.gg/etJNHCQ)
+
 > **Self Hosting Tutorial**: https://taaku18.github.io/modmail/local-hosting/
 
- ## What you'll need:
- - An internet connection and browser.
- - An email account.
- - A digital or physical notepad (Notepad, Notes, ... literally anything).
+## What you'll need:
 
-## 1. Heroku Account
+- An internet connection and browser.
+- An email account.
+- A digital or physical notepad (Notepad, Notes, ... literally anything).
 
-In this guide, we will be using Heroku to deploy our Modmail bot. Make an account on their [website](https://www.heroku.com/) to get started.
-
-## 2. Discord Bot Account
+## 1. Placeholder
 
 ## 2.1. Create a bot
 
@@ -25,7 +28,7 @@ A new screen should pop up. Navigate to the `Bot` section and click on `Add Bot`
 
 ## 2.2. Obtain a token
 
-After this, a dashboard for your bot will open. Give your bot a nice profile picture if you want to. It's recommended you switch off the `Public Bot` option. That way,  no one except yourself will be able to add this bot to their server. Lastly, copy the token and paste this in your notepad.
+After this, a dashboard for your bot will open. Give your bot a nice profile picture if you want to. It's recommended you switch off the `Public Bot` option. That way, no one except yourself will be able to add this bot to their server. Lastly, copy the token and paste this in your notepad.
 
 **Make sure to keep this token private, since anyone who has it can control (or "hack") your bot and potentially cause malicious damage. If you feel that your token has been leaked, click on `Regenerate` to invalidate the old one and create a new bot token.**
 
@@ -39,7 +42,7 @@ Enable the "Presence Intent", "Server Members" and "Message content" intent with
 
 ## 2.4. Get an invite link
 
-The last thing you need to do in Discord's developer portal is to obtain an invite link for the bot. To do this, head over to the `OAuth2` tab. Scroll down a bit and select the `Bot` section. Scroll a bit further down and you will see a few permissions. Make sure to select `View Audit Log`, `Manage Channels` and `Manage Messages`. 
+The last thing you need to do in Discord's developer portal is to obtain an invite link for the bot. To do this, head over to the `OAuth2` tab. Scroll down a bit and select the `Bot` section. Scroll a bit further down and you will see a few permissions. Make sure to select `View Audit Log`, `Manage Channels` and `Manage Messages`.
 
 ![Discord Invite Link](https://i.imgur.com/eK8gQbf.png)
 
@@ -50,12 +53,6 @@ Before you press "copy", scroll down and select the following permissions:
 ## 2.5. Invite the bot
 
 `Copy` the link and paste it in your address bar. A new screen will open: choose your server and select all options. Click on `Authorize` and your bot should be offline in your server.
-
-![Discord Invite](https://i.imgur.com/iAQ2u0w.png)
----
-**[To continue the setup, head over to the second page of this guide.](https://github.com/kyb3r/modmail/wiki/Installation-(cont.))**
-
-# Installation (continued)
 
 ## 3. Create a Database
 
@@ -95,13 +92,14 @@ The last part is to generate a Mongo URI. Go to the `Clusters` section in the `A
 
 ![Connection String](https://fle.soulmusic.pro/file/shxshx/Xuanhuaceratops1637.png)
 
-You need to copy the connection string, which can be easily done by clicking the `Copy` button. Remove everything past `<dbname>` but keeping the `/`. Then replace `<password>` with the password for your user and `<username>`  with your database-username, which you set earlier. Paste the URI in your notepad.
+You need to copy the connection string, which can be easily done by clicking the `Copy` button. Remove everything past `<dbname>` but keeping the `/`. Then replace `<password>` with the password for your user and `<username>` with your database-username, which you set earlier. Paste the URI in your notepad.
 
 The final URI looks similar to this: `mongodb+srv://Username:MyPassword@modmail-kjvn21.mongodb.net/`.
 
 ![Connection String - 2](https://i.imgur.com/UIAhrZ1.png)
 
-## 4. How to obtain your `github_token`  ( Required for the update command )
+## 4. How to obtain your `github_token` ( Required for the update command )
+
 Note: This is not required when you are hosting using a vps.
 
 Start off by going to your [Github personal access tokens](https://github.com/settings/tokens)
@@ -119,7 +117,7 @@ Click `Generate token` and GitHub will take you back to the list of tokens from 
 ![Github token Copy](https://i.imgur.com/oFb2zB6.png)
 
 If those steps are done correctly you can use the `?update` command to update your bot to the latest version!
- 
+
 ## 5. Deploying the Log Viewer
 
 ### **Click the button below to deploy the logviewer to heroku!**
@@ -128,7 +126,7 @@ If those steps are done correctly you can use the `?update` command to update yo
 
 **This is not the bot!**
 
-You will need to deploy a separate log viewer application from [this repository](https://github.com/kyb3r/logviewer). This Heroku application is separate from the bot; it's a simple website that will be used to display your thread logs. 
+You will need to deploy a separate log viewer application from [this repository](https://github.com/kyb3r/logviewer). This Heroku application is separate from the bot; it's a simple website that will be used to display your thread logs.
 
 Choose a name for your app and paste your Mongo URI (from your notepad). After you click the `Deploy App` button, it will start creating the website.
 
@@ -136,40 +134,9 @@ After that's done configuring, click the `View` button. It will redirect you to 
 
 ![Heroku Logviewer](https://i.imgur.com/tmiPfTL.png)
 
-## 6. Modmail
+## 6. Hosting
 
-### **Click the button below to deploy the bot to heroku.**
-**This is the second application you will be deploying**
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kyb3r/modmail)
-
-
-**6.1.** Choose any name for your app. Note: this name doesn't matter at all.
-
-**6.2.** Put your [bot's token](https://github.com/kyb3r/modmail/wiki/Installation#creating-a-bot-account) in the `TOKEN` field.
-
-**6.3.** In the `DATABASE_TYPE` You may fillout: `mongodb`
-
-**6.4.** Put the [ID of your Server](https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-) into the `GUILD_ID` field.
-
-**6.5.** Put your own ID in the `OWNERS` field. If there are multiple owners, separate them by a comma: `180314310298304512, 355790471219511297, 325012556940836864`.
-
-**6.6.** Put your Mongo connection URI from the previous section in the `CONNECTION_URI` field.
-
-**6.7.** Put the `github token` you just created in the `GITHUB_TOKEN` field.
-
-**6.8.** Put the URL of your log viewer Heroku app (`https://yourlogviewerappname.herokuapp.com`) in the `LOG_URL` field.
-
-**6.9.** Click the `deploy app` button and wait for it to finish.
-
-**6.10.** Click `Manage App` and go into the `Resources` tab, where you need to turn on the worker by clicking the pencil icon next to it.
-
-**6.11.** If you want, you can go over and check the application logs to see if everything is running smoothly. If any unexpected errors pop up, join our [Discord server](https://discord.gg/etJNHCQ) and DM Modmail. The support members will help you figure out the issue and show you how to fix it.
-
-**6.12.** Once the bot is online in your server, 
-make sure to give it `Manage Channels`, `Manage Messages` and `View Audit Logs` permissions. If your bot is not online, recheck the previous steps above.
-
-**6.13.** Do the `?setup` command and you are good to go!
+To host the bot, choosing a [hosting option](hosting).
 
 ---
 
